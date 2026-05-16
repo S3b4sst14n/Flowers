@@ -25,7 +25,33 @@ document.addEventListener("DOMContentLoaded", () => {
   initParallax();
   initFlowerSparkles();
   initPrank();
+  initLetterPhoto();
 });
+
+/* ============================================================
+   Cargador de foto en la carta — prueba varias extensiones.
+   El <img data-srcs="a,b,c"> se completa probando una a una;
+   si ninguna carga, se elimina el <figure> entero.
+   ============================================================ */
+function initLetterPhoto() {
+  const img = document.querySelector(".letter__photo img");
+  if (!img) return;
+  const srcs = (img.dataset.srcs || "")
+    .split(",")
+    .map((s) => s.trim())
+    .filter(Boolean);
+  if (!srcs.length) return;
+  let i = 0;
+  function tryNext() {
+    if (i >= srcs.length) {
+      img.closest("figure")?.remove();
+      return;
+    }
+    img.src = srcs[i++];
+  }
+  img.addEventListener("error", tryNext);
+  tryNext();
+}
 
 /* ----------- Aplica la configuración a los nodos -------------- */
 function applyConfig() {

@@ -183,6 +183,133 @@
         animation: blooming-leaf-left var(--fl-speed) 1.9s backwards;
       }
 
+      /* ============================================================
+         Flores extras del ramo (--4 a --9). Comparten el punto base
+         (left: 50%, bottom: 10vmin) y se abren en abanico con
+         distintas rotaciones, tamaños y alturas de tallo.
+         ============================================================ */
+      .flower--4,
+      .flower--5,
+      .flower--6,
+      .flower--7,
+      .flower--8,
+      .flower--9 {
+        left: 50%;
+      }
+
+      .flower--4 {
+        animation: moving-flower-4 4.4s linear infinite;
+        z-index: 9;
+      }
+      .flower--4 .flower__line {
+        height: 48vmin;
+        animation-delay: 0.5s;
+      }
+      .flower--4 .flower__line__leaf--1 { animation: blooming-leaf-right var(--fl-speed) 2.0s backwards; }
+      .flower--4 .flower__line__leaf--2 { animation: blooming-leaf-right var(--fl-speed) 1.8s backwards; }
+      .flower--4 .flower__line__leaf--3 { animation: blooming-leaf-left  var(--fl-speed) 1.7s backwards; }
+      .flower--4 .flower__line__leaf--4 { animation: blooming-leaf-left  var(--fl-speed) 1.5s backwards; }
+
+      .flower--5 {
+        animation: moving-flower-5 4.6s linear infinite;
+        z-index: 9;
+      }
+      .flower--5 .flower__line {
+        height: 50vmin;
+        animation-delay: 0.7s;
+      }
+      .flower--5 .flower__line__leaf--1 { animation: blooming-leaf-right var(--fl-speed) 2.1s backwards; }
+      .flower--5 .flower__line__leaf--2 { animation: blooming-leaf-right var(--fl-speed) 1.9s backwards; }
+      .flower--5 .flower__line__leaf--3 { animation: blooming-leaf-left  var(--fl-speed) 1.8s backwards; }
+      .flower--5 .flower__line__leaf--4 { animation: blooming-leaf-left  var(--fl-speed) 1.6s backwards; }
+
+      .flower--6 {
+        animation: moving-flower-6 4.2s linear infinite;
+        z-index: 11;
+      }
+      .flower--6 .flower__line {
+        height: 55vmin;
+        animation-delay: 0.4s;
+      }
+      .flower--6 .flower__line__leaf--1 { animation: blooming-leaf-right var(--fl-speed) 1.7s backwards; }
+      .flower--6 .flower__line__leaf--2 { animation: blooming-leaf-right var(--fl-speed) 1.5s backwards; }
+      .flower--6 .flower__line__leaf--3 { animation: blooming-leaf-left  var(--fl-speed) 1.4s backwards; }
+      .flower--6 .flower__line__leaf--4 { animation: blooming-leaf-left  var(--fl-speed) 1.2s backwards; }
+
+      .flower--7 {
+        animation: moving-flower-7 4.3s linear infinite;
+        z-index: 11;
+      }
+      .flower--7 .flower__line {
+        height: 52vmin;
+        animation-delay: 0.55s;
+      }
+      .flower--7 .flower__line__leaf--1 { animation: blooming-leaf-right var(--fl-speed) 1.8s backwards; }
+      .flower--7 .flower__line__leaf--2 { animation: blooming-leaf-right var(--fl-speed) 1.6s backwards; }
+      .flower--7 .flower__line__leaf--3 { animation: blooming-leaf-left  var(--fl-speed) 1.5s backwards; }
+      .flower--7 .flower__line__leaf--4 { animation: blooming-leaf-left  var(--fl-speed) 1.3s backwards; }
+
+      .flower--8 {
+        animation: moving-flower-8 5s linear infinite;
+        z-index: 8;
+      }
+      .flower--8 .flower__line {
+        height: 38vmin;
+        animation-delay: 0.9s;
+      }
+      .flower--8 .flower__line__leaf--1 { animation: blooming-leaf-right var(--fl-speed) 2.3s backwards; }
+      .flower--8 .flower__line__leaf--2 { animation: blooming-leaf-right var(--fl-speed) 2.1s backwards; }
+      .flower--8 .flower__line__leaf--3 { animation: blooming-leaf-left  var(--fl-speed) 2.0s backwards; }
+      .flower--8 .flower__line__leaf--4 { animation: blooming-leaf-left  var(--fl-speed) 1.8s backwards; }
+
+      .flower--9 {
+        animation: moving-flower-9 5.2s linear infinite;
+        z-index: 8;
+      }
+      .flower--9 .flower__line {
+        height: 38vmin;
+        animation-delay: 1s;
+      }
+      .flower--9 .flower__line__leaf--1 { animation: blooming-leaf-right var(--fl-speed) 2.4s backwards; }
+      .flower--9 .flower__line__leaf--2 { animation: blooming-leaf-right var(--fl-speed) 2.2s backwards; }
+      .flower--9 .flower__line__leaf--3 { animation: blooming-leaf-left  var(--fl-speed) 2.1s backwards; }
+      .flower--9 .flower__line__leaf--4 { animation: blooming-leaf-left  var(--fl-speed) 1.9s backwards; }
+
+      /* Retardos de floración de las cabezas */
+      .flower__leafs--4 { animation-delay: 1.9s; }
+      .flower__leafs--5 { animation-delay: 2.1s; }
+      .flower__leafs--6 { animation-delay: 1.6s; }
+      .flower__leafs--7 { animation-delay: 1.8s; }
+      .flower__leafs--8 { animation-delay: 2.4s; }
+      .flower__leafs--9 { animation-delay: 2.5s; }
+
+      /* Keyframes — cada una incluye scale para que el tamaño no
+         sea sobrescrito por la animación de rotación. */
+      @keyframes moving-flower-4 {
+        0%, 100% { transform: rotate(30deg) scale(0.78); }
+        50%      { transform: rotate(27deg) scale(0.78); }
+      }
+      @keyframes moving-flower-5 {
+        0%, 100% { transform: rotate(-26deg) scale(0.8); }
+        50%      { transform: rotate(-29deg) scale(0.8); }
+      }
+      @keyframes moving-flower-6 {
+        0%, 100% { transform: rotate(10deg) scale(0.85); }
+        50%      { transform: rotate(8deg)  scale(0.85); }
+      }
+      @keyframes moving-flower-7 {
+        0%, 100% { transform: rotate(-8deg) scale(0.85); }
+        50%      { transform: rotate(-10deg) scale(0.85); }
+      }
+      @keyframes moving-flower-8 {
+        0%, 100% { transform: rotate(48deg) scale(0.6); }
+        50%      { transform: rotate(45deg) scale(0.6); }
+      }
+      @keyframes moving-flower-9 {
+        0%, 100% { transform: rotate(-44deg) scale(0.6); }
+        50%      { transform: rotate(-47deg) scale(0.6); }
+      }
+
       .flower__leafs {
         position: relative;
         -webkit-animation: blooming-flower 2s backwards;
@@ -2191,6 +2318,32 @@ body:not(.is-loading) .loader {
   color: #6b3a4d;
 }
 
+/* Foto opcional dentro de la carta — estilo polaroid suave. */
+.letter__photo {
+  width: min(72%, 240px);
+  margin: 0 auto 3.5vmin;
+  aspect-ratio: 4 / 5;
+  padding: 10px 10px 28px;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow:
+    0 14px 28px rgba(107, 58, 77, 0.22),
+    0 4px 8px rgba(0, 0, 0, 0.08);
+  transform: rotate(-2.5deg);
+  transition: transform 0.55s cubic-bezier(0.2, 0.9, 0.25, 1.1);
+  overflow: hidden;
+}
+.letter__photo:hover {
+  transform: rotate(0deg) scale(1.04);
+}
+.letter__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 3px;
+  display: block;
+}
+
 .letter__body {
   font-family: "Cormorant Garamond", serif;
   font-weight: 400;
@@ -2258,10 +2411,15 @@ body:not(.is-loading) .loader {
    Mobile (≤ 720px)
    ============================================================ */
 @media (max-width: 720px) {
-  .poem { padding: 5vh 5vw 4vh; }
+  /* En móvil el bloque (título + botón) se centra dentro del área superior
+     del viewport — el padding-bottom alto reserva el espacio inferior para
+     las flores, haciendo que el bloque flote por encima de ellas. */
+  .poem {
+    padding: 2vh 5vw 38vh;
+    justify-content: center;
+  }
   .poem__title { font-size: clamp(1.4rem, 6.5vw, 2.2rem); }
-  /* En móvil el botón sube justo debajo del título.
-     (En escritorio sigue al pie por `margin-top: auto`; aquí lo sobrescribimos.) */
+  /* Sobrescribe el `margin-top: auto` que en escritorio empuja al pie. */
   .poem__button {
     font-size: 0.78rem;
     padding: 12px 22px;
